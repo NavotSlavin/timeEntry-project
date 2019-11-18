@@ -1,5 +1,5 @@
 import React from 'react';
-import './scss/TimeEntryDetails.scss'
+import '../scss/TimeEntryDetails.scss'
 
 
 class TimeEntryDetails extends React.Component {
