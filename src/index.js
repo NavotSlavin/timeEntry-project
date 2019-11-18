@@ -1,14 +1,27 @@
+import './scss/index.scss'
 //import the react and react-dom libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TimeEntryDetails from './TimeEntryDetails'
 import TableTime from './TableTime';
 
-//create a react component
-const App = function(){
-    return (
-        <div className="ui container timeEntries">
-            <TableTime>
+class App extends React.Component {
+
+    constructor(props){
+        super(props);
+
+        this.state = {
+            listOfTimeEntries : []
+        }
+    }
+
+    //for updating state do:
+    //this.setState({listOfTimeEntries.push(something)})
+    render(){
+        return (
+            <div className="ui container timeEntries">
+                <TableTime>  
+                {/* {this.state.listOfTimeEntries} */}
                 <TimeEntryDetails 
                 task="task1"
                 project="project1"
@@ -23,10 +36,18 @@ const App = function(){
                     endTime="12:55 pm"
                     timer="00:09"
                 />
-            </TableTime>
-        </div>
-    );
-};
+                <TimeEntryDetails 
+                    task="task3"
+                    project="project3"
+                    startTime="12:00 pm"
+                    endTime="12:55 pm"
+                    timer="00:09"
+                />
+                </TableTime>
+            </div>
+        )
+    }
+}
 
 //take the react component  and show it on the scree
 ReactDOM.render(

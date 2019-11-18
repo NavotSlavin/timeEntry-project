@@ -1,18 +1,19 @@
 import React from 'react';
+import './scss/TimeEntryDetails.scss'
 
 
-const TimeEntryDetails = (props) => {
-    return (
-        <div className="time entry container">
-            <div className="text"> { props.task } </div>
-            <div className="text"> { props.project } </div>
-            <div className="time">
-                <span className="startTime"> { props.startTime } </span>
-                <span className="endTime"> { props.endTime } </span>
-            </div>
-            <div className="timer">{ props.timer } </div>
-        </div>
-    );
+class TimeEntryDetails extends React.Component {
+
+    render() {
+        return (
+            <tr>
+                <td>{ this.props.task }</td>
+                <td>{ this.props.project }</td>
+                <td>{ this.props.startTime } </td>
+                <td>{ this.props.endTime }</td>
+            </tr>
+        )
+    }
 }
 
 
