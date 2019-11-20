@@ -1,7 +1,12 @@
 import React from 'react';
 
 class TableTime extends React.Component {
+    showTimeEntries(){
+
+    }
     render () {
+        const listOfTimeEntries = this.props.listOfTimeEntries
+        const listItems = listOfTimeEntries.map((timeEntry) => {return timeEntry} )
         return (
             <table>
             <thead>
@@ -13,12 +18,10 @@ class TableTime extends React.Component {
                 </tr>
             </thead>
             <tbody>
-                { this.props.children[0] }
-                { this.props.children[1] }
-                { this.props.children[2] }
+                { listItems }
             </tbody>
             </table>
-        )
+        ) 
     }
  }
 
