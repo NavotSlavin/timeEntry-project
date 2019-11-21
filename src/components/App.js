@@ -1,6 +1,6 @@
 //import the react and react-dom libraries
 import React from 'react';
-import TimeEntryDetails from './TimeEntryDetails'
+import axios from 'axios'
 import TableTime from './TableTime';
 import TimeEntryBar from './TimeEntryBar';
 
@@ -10,33 +10,27 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            listOfTimeEntries : [
-                <TimeEntryDetails 
-                task="task1"
-                project="project1"
-                startTime="11:00 am"
-                endTime="11:55 am"
-                timer="00:03"
-                />
-            ]
+            listOfTimeEntries : []
         }
     }
 
-    onBarSubmit(task, project) {
-        console.log("app task : " + task)
-        console.log("app project : " + project)
+    onAddBarSubmit = (task, project, startTime, endTime) => {
+        let currentListOfTimeEntries = this.state.listOfTimeEntries;
+        currentListOfTimeEntries.push({task : task, project : project, startTime : startTime, endTime : endTime})
+        this.setState({listOfTimeEntries : currentListOfTimeEntries})
+        //get from server all the entry times so far
+        // axios.get('http://localhost:3000/time-entries', {
+        //     params : {},
+        //     headers : {
+        //         //navot put here the token when you add login
+        //     }
+        // })
     }
 
-    //for updating state do:
-    //this.setState({listOfTimeEntries.push(something)})
     render(){
         return (
             <div className="ui container timeEntries">
-                {/* <TimeEntryBar 
-                    task={this.props.task}
-                    project={this.props.project}
-                /> */}
-                <TimeEntryBar onSubmit={this.onBarSubmit}/>
+                <TimeEntryBar onSubmit={this.onAddBarSubmit}/>
                 <TableTime listOfTimeEntries={this.state.listOfTimeEntries}/>
             </div>
         )

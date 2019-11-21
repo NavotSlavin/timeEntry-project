@@ -6,7 +6,7 @@ class TimeEntryDetails extends React.Component {
 
     render() {
         return (
-            <tr>
+            <tr key={this.props._id}>
                 <td>{ this.props.task }</td>
                 <td>{ this.props.project }</td>
                 <td>{ this.props.startTime } </td>
@@ -15,7 +15,5 @@ class TimeEntryDetails extends React.Component {
         )
     }
 }
-
-
 
 export default TimeEntryDetails;
