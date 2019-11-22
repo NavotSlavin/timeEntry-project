@@ -1,9 +1,8 @@
 import React from 'react';
 import TimeEntryDetails from './TimeEntryDetails'
+import '../scss/TableTime.scss'
 class TableTime extends React.Component {
-    showTimeEntries(){
 
-    }
     render () {
         const listOfTimeEntries = this.props.listOfTimeEntries
         const listItems = listOfTimeEntries.map((timeEntry) => {
@@ -11,24 +10,18 @@ class TableTime extends React.Component {
             return <TimeEntryDetails task={task} project={project} startTime={startTime} endTime={endTime}/>
          })
         return (
-            <table>
-            <thead>
-                <tr>
-                <th>Task</th>
-                <th>Project</th>
-                <th>start</th>
-                <th>end</th>
-                </tr>
-            </thead>
-            <tbody>
+            <div className="rTable">
+                <div className="rTableRow">
+                    <div className="rTableHead"><strong>Task</strong></div>
+                    <div className="rTableHead"><strong>project</strong></div>
+                    <div className="rTableHead"><strong>start</strong></div>
+                    <div className="rTableHead"><strong>end</strong></div>
+                </div>
                 { listItems }
-            </tbody>
-            </table>
+            </div>
         ) 
     }
  }
-
-
 
 
 export default TableTime;

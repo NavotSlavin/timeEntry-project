@@ -3,6 +3,7 @@ import React from 'react';
 import axios from 'axios'
 import TableTime from './TableTime';
 import TimeEntryBar from './TimeEntryBar';
+import '../scss/App.scss'
 
 class App extends React.Component {
 
@@ -29,9 +30,9 @@ class App extends React.Component {
 
     render(){
         return (
-            <div className="ui container timeEntries">
-                <TimeEntryBar onSubmit={this.onAddBarSubmit}/>
-                <TableTime listOfTimeEntries={this.state.listOfTimeEntries}/>
+            <div className="App">
+                <TimeEntryBar className="TimeEntryBar" onSubmit={this.onAddBarSubmit}/>
+                <TableTime style={{backgroundColor: 'blue'}} className="TableTime" listOfTimeEntries={this.state.listOfTimeEntries}/>    
             </div>
         )
     }

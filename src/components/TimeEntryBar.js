@@ -3,7 +3,12 @@ import Timer from './Timer'
 import '../scss/TimeEntryBar.scss'
 
 class TimeEntryBar extends React.Component {
-    state = { task : '', project : '', startTime: `${new Date().getHours()}:${new Date().getMinutes()}`, endTime : ''}
+    state = { 
+        task : '',
+        project : '',
+        startTime: `${new Date().getHours()}:${new Date().getMinutes()}`,
+        endTime : ''
+    }
     
     //way to pass the this between parent to child
     onFormSubmit = (event) => {
