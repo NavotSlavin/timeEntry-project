@@ -17,6 +17,10 @@ class TimeEntryBar extends React.Component {
         //pass the parent component the data
         this.props.onSubmit(this.state.task, this.state.project, this.state.startTime, this.state.endTime)
     }
+
+    handleDropDownChange = (event) => {
+        this.setState({value: event.target.value});
+      }
      
     render() {
         return (
@@ -29,12 +33,18 @@ class TimeEntryBar extends React.Component {
                         value={this.state.task}
                         onChange={ e => this.setState({ task : e.target.value})}
                       />
-                    <input //controlled element
+                    {/* <input //controlled element
                         type="text"
                         placeholder="project"
                         value={this.state.project}
                         onChange={ e => this.setState({ project : e.target.value})}
-                      />
+                      /> */}
+                    <select value={this.state.value} onChange={e => this.setState({ project : e.target.value})}>
+                                <option value="Project 1">Project 1</option>
+                                <option value="Project 2">Project 2</option>
+                                <option value="Project 3">Project 3</option>
+                                <option value="eLoomina">eLoomina</option>
+                    </select>
                        <input //controlled element
                         type="text"
                         placeholder="start time"
