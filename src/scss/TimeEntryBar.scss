@@ -1,8 +1,6 @@
-.time-entry-bar {
-    padding:0;
-    margin:0;
-    top:0;
-    left:0;
+.timeEntryBar {
     width: 100%;
     background-color: yellow;
+    display: flex;
+    flex-direction: row;
 }

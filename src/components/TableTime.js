@@ -4,7 +4,7 @@ import '../scss/TableTime.scss'
 class TableTime extends React.Component {
 
     render () {
-        const listOfTimeEntries = this.props.listOfTimeEntries
+        const listOfTimeEntries = this.props.listOfTimeEntries;
         const listItems = listOfTimeEntries.map((timeEntry) => {
             const { task , project, startTime, endTime } = timeEntry
             return <TimeEntryDetails task={task} project={project} startTime={startTime} endTime={endTime}/>
