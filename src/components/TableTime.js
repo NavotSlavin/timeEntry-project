@@ -12,10 +12,10 @@ class TableTime extends React.Component {
         return (
             <div className="rTable">
                 <div className="rTableRow">
-                    <div className="rTableHead"><strong>Task</strong></div>
-                    <div className="rTableHead"><strong>project</strong></div>
-                    <div className="rTableHead"><strong>start</strong></div>
-                    <div className="rTableHead"><strong>end</strong></div>
+                    <div className="tableCol"><strong>Task</strong></div>
+                    <div className="tableCol"><strong>project</strong></div>
+                    <div className="tableCol"><strong>start</strong></div>
+                    <div className="tableCol"><strong>end</strong></div>
                 </div>
                 { listItems }
             </div>

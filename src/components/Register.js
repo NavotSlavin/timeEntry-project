@@ -15,27 +15,31 @@ class Resigter extends React.Component {
     render() {
         return (    
             <div className="wrapper">
-                <h1>eLoomina Resigter page</h1>
-                <div id="formContent">
-                    <form className="formWrapper">
-                        <div>
-                            <input type="text" id="name"  placeholder="name" /> 
+                
+                <div className="formWrapper">
+                <h3>eLoomina Resigter </h3>
+                    <form className="formContent">
+                        <div className="inputForm">
+                            <input type="text" placeholder="name" /> 
                         </div>
-                        <div>
-                            <input type="text" id="username"  placeholder="user name" /> 
+                        <div className="inputForm">
+                            <input type="text"   placeholder="user name" /> 
                         </div>
-                        <div>
-                            <input type="text" id="email"  placeholder="email" /> 
+                        <div className="inputForm">
+                            <input type="email"  placeholder="email" /> 
                         </div>
-                        <div>
-                            <input type="text" id="address" placeholder="address" /> 
+                        <div className="inputForm">
+                            <input type="text" placeholder="address" /> 
                         </div>
-                        <div>
-                            <input type="text" id="password"placeholder="password" /> 
-                        </div>
-                        <input id="loginButton" type="submit" value="Register" />                
+                        <div className="inputForm">
+                            <input type="password" placeholder="password" /> 
+                        </div>               
                     </form>
+                    <div>
+                        <input id="loginButton" type="submit" value="Register" /> 
+                    </div> 
                 </div>
+    
             </div>
         )
     }

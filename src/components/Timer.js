@@ -58,10 +58,10 @@ class Timer extends Component {
     if(this.state.timerOn === false && this.state.timerTotalTime === 0) {
       return (
         <div className="timer">
-          <div>
+          <div className="start">
             <button onClick={this.startTimer}>Start</button>
           </div>
-          <div >
+          <div className="time">
             {hours} : {minutes} : {seconds} 
           </div>
         </div>
@@ -69,10 +69,10 @@ class Timer extends Component {
     } else if(this.state.timerOn === true) {
       return (
         <div className="timer">
-          <div>
+          <div className="start">
             <button onClick={this.stopTimer}>Stop</button>
           </div>    
-          <div >
+          <div className="time">
             {hours} : {minutes} : {seconds} 
           </div>
         </div>

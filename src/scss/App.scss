@@ -8,9 +8,14 @@
     box-shadow: 0 3px 6px rgb(12, 12, 12);
   }
 
-  .App {
-    text-align: center;
-    font-family: "Roboto", sans-serif;
-    height: 100vh;
-    color: #1e0bc2;
-  }
+    .App {
+      background-color: #F07A18;
+      text-align: center;
+      font-family: "Roboto", sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+  
+ 

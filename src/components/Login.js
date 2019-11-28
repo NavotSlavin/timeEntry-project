@@ -10,23 +10,35 @@ class Login extends React.Component {
             email : ''
         }
     }
+
+    onSubmit = () => {
+
+    }
     render() {
         return (    
             <div className="wrapper">
-                <h1>eLoomina login page</h1>
-                <div id="formContent">
-                    <form className="formWrapper">
-                        <div>
-                            <input type="text" id="email"  name="login" placeholder="email" /> 
+                <div className="formWrapper">
+                <h3>eLoomina login </h3>
+                    <form className="formContent">
+                        <div className="inputForm">
+                            <input type="text"
+                                    id="email"  
+                                    name="login" 
+                                    placeholder="email" 
+                                    value={this.state.email}
+                                    onChange={ e => this.setState({ email : e.target.value})}
+                            /> 
                         </div>
-                        <div>
+                        <div className="inputForm">
                             <input type="text" id="password"  name="login" placeholder="password" /> 
                         </div>
-                        <div className="formButtonsWrapper">
-                            <input id="loginButton" type="submit" value="Log In" />  
-                            <Link id= "resiterlink" to="/register">Register</Link>    
-                        </div>
                     </form>
+                    <div className="formButtonsWrapper">
+                            <input id="loginButton" type="submit" value="Log In"  onSubmit={this.onSubmit()}/>    
+                    </div>
+                    <div>
+                        <Link id= "resiterlink" to="/register">Register</Link>  
+                    </div>
                 </div>
             </div>
         )

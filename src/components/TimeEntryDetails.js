@@ -7,10 +7,10 @@ class TimeEntryDetails extends React.Component {
     render() {
         return (
             <div className="rTableRow">
-                <div className="rTableCell">{ this.props.task }</div>
-                <div className="rTableCell">{ this.props.project }</div>
-                <div className="rTableCell">{ this.props.startTime }</div>
-                <div className="rTableCell">{ this.props.endTime }</div>
+                <div className="tableCol">{ this.props.task }</div>
+                <div className="tableCol">{ this.props.project }</div>
+                <div className="tableCol">{ this.props.startTime }</div>
+                <div className="tableCol">{ this.props.endTime }</div>
             </div>
         )
     }

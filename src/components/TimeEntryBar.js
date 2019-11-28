@@ -2,7 +2,6 @@ import React from 'react';
 import Timer from './Timer'
 import DropdownProjects from './DropdownProjects'
 import '../scss/TimeEntryBar.scss'
-
 class TimeEntryBar extends React.Component {
     state = { 
         task : '',
@@ -22,26 +21,25 @@ class TimeEntryBar extends React.Component {
     render() {
         return (
             <div className="timeEntryBar" >
-                <div>
-                    <input //controlled element
+                <div className="taskWrapper">
+                    <input className="taskInput"
                         type="text"
-                        placeholder="task"
+                        placeholder="What are you working on?"
                         value={this.state.task}
                         onChange={ e => this.setState({ task : e.target.value})}
                         />
                 </div>
-                <div>
-                    <select value={this.state.value} onChange={e => this.setState({ project : e.target.value})}>
+                <div className="selectWrapper">
+                    <select className="selectDrop" value={this.state.value} onChange={e => this.setState({ project : e.target.value})}>
                                 <option value="Project 1">Project 1</option>
                                 <option value="Project 2">Project 2</option>
                                 <option value="Project 3">Project 3</option>
                                 <option value="eLoomina">eLoomina</option>
                     </select>
                 </div>
-                <div>
+                <div className="timerWrapper">
                     <Timer addTimeEntry={this.handleTimerChange}  getTime={this.getTime} />
                 </div>
-                 
             </div>
         );
     }
