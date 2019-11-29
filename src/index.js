@@ -4,12 +4,13 @@ import App from './components/App'
 import Register from './components/Register'
 import Login from './components/Login'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 import './scss/index.scss'
 
 const routing = (
-    <Router>
+    <Router token={''}>
       <div>
-        <Route path="/home" component={App} />
+        <Route path="/home/:id" component={App} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
       </div>
