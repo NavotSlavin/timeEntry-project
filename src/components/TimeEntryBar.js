@@ -11,12 +11,18 @@ class TimeEntryBar extends React.Component {
     }
 
     handleTimerChange = (startTime, endTime) => {
+        const { task, project } = this.state
         //async operation
-        this.setState({ startTime : startTime , endTime : endTime});
-        
+        this.setState({ task : '', project: '',startTime : '' , endTime : ''});
         //pass the parent component the data
-        this.props.onSubmit(this.state.task, this.state.project, startTime, endTime)
+        this.props.onSubmit(task, project, startTime, endTime);    
     }
+
+    setProjectState = (project) => {
+        this.setState({  project: project});
+    }
+
+
      
     render() {
         return (
@@ -30,12 +36,7 @@ class TimeEntryBar extends React.Component {
                         />
                 </div>
                 <div className="selectWrapper">
-                    <select className="selectDrop" value={this.state.value} onChange={e => this.setState({ project : e.target.value})}>
-                                <option value="Project 1">Project 1</option>
-                                <option value="Project 2">Project 2</option>
-                                <option value="Project 3">Project 3</option>
-                                <option value="eLoomina">eLoomina</option>
-                    </select>
+                    <DropdownProjects setProject={this.setProjectState}/>
                 </div>
                 <div className="timerWrapper">
                     <Timer addTimeEntry={this.handleTimerChange}  getTime={this.getTime} />

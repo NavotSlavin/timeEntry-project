@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './components/App'
 import Register from './components/Register'
 import Login from './components/Login'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import './scss/index.scss'
 

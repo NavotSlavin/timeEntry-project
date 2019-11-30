@@ -138,6 +138,9 @@ module.exports = function(webpackEnv) {
   };
 
   return {
+    externals: {
+      'Config': JSON.stringify(isEnvProduction ? require('./config.prod.json') : require('./config.dev.json'))
+    },
     mode: isEnvProduction ? 'production' : isEnvDevelopment && 'development',
     // Stop compilation early in production
     bail: isEnvProduction,
@@ -685,4 +688,5 @@ module.exports = function(webpackEnv) {
     // our own hints via the FileSizeReporter
     performance: false,
   };
+
 };

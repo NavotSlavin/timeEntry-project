@@ -1,8 +1,8 @@
 import React from 'react';
-import {  Redirect } from "react-router-dom";
 import axios from 'axios';
 import '../scss/Login.scss';
-import App from './App';
+const Config = require('Config')
+
 class Resigter extends React.Component {
     constructor(props){
         super(props);
@@ -17,7 +17,7 @@ class Resigter extends React.Component {
 
     onAddUser = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:3001/app/user/register', {
+        axios.post(`${Config.serverUrl}/app/user/register`, {
             user_name: this.state.username,
             password: this.state.password,
             email : this.state.email,
@@ -33,6 +33,7 @@ class Resigter extends React.Component {
                 console.log(error);
           });
     }
+
     render() {
         return (    
             <div className="wrapper">       

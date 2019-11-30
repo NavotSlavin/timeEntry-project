@@ -5,9 +5,9 @@ class TableTime extends React.Component {
 
     render () {
         const listOfTimeEntries = this.props.listOfTimeEntries;
-        const listItems = listOfTimeEntries.map((timeEntry) => {
+        const listItems = listOfTimeEntries.map((timeEntry, index) => {
             const { task , project, startTime, endTime } = timeEntry
-            return <TimeEntryDetails task={task} project={project} startTime={startTime} endTime={endTime}/>
+            return <TimeEntryDetails key={index} task={task} project={project} startTime={startTime} endTime={endTime}/>
          })
         return (
             <div className="rTable">

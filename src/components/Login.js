@@ -1,7 +1,8 @@
 import React from 'react';
-import {  Redirect, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from 'axios';
 import '../scss/Login.scss'
+const Config = require('Config')
 class Login extends React.Component {
     constructor(props){
         super(props);
@@ -13,7 +14,7 @@ class Login extends React.Component {
 
     onLogin = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:3001/app/user/login', {
+        axios.post(`${Config.serverUrl}/app/user/login`, {
             email : this.state.email,
             password: this.state.password
           })
