@@ -1,5 +1,5 @@
 {
 
-    "serverUrl": "http://putserverhere.com"
+    "serverUrl": "http://ec2-34-245-19-84.eu-west-1.compute.amazonaws.com"
 
 }
