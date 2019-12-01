@@ -1,5 +1,5 @@
 {
 
-    "serverUrl": "http://localhost:3001"
+    "serverUrl": "http://ec2-34-245-19-84.eu-west-1.compute.amazonaws.com:3001"
 
 }

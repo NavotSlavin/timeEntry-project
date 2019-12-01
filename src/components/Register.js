@@ -90,6 +90,7 @@ class Resigter extends React.Component {
             name: name
           })
           .then((response) => {
+            sessionStorage.setItem('token', response.data.token);
             const userId = response.data._id;
             this.props.history.push(`/home/${userId}`);
           })
