@@ -30,10 +30,11 @@ class App extends React.Component {
             endTime : endTime,
             userId: userId 
           },  {
-            headers: {token: localStorage.token}
+            headers: {token: sessionStorage.token}
           })
           .then((response) => {
-            this.componentDidMount()
+            // this.componentDidMount()¸
+            this.setState({listOfTimeEntries:currentListOfTimeEntries})
             console.log(response);
           })
           .catch((error) => {
@@ -43,7 +44,7 @@ class App extends React.Component {
 
     componentDidMount = () => {
         // when a component first render
-        let token = localStorage.getItem('token');
+        let token = sessionStorage.getItem('token');
         const userId = this.props.match.params.id;
         axios.get(`${Config.serverUrl}/app/time-entries/`, {
             headers : {
@@ -54,6 +55,7 @@ class App extends React.Component {
             }
           })
         .then((response) => {
+          console.log("response " + response)
             const listItems = response.data.map((timeEntry) => {
                 let currentItem = {
                     key : timeEntry._id,//mongo unique
@@ -64,6 +66,7 @@ class App extends React.Component {
                 }
                 return currentItem;
              }) 
+             debugger
             this.setState({listOfTimeEntries : listItems, userId : userId});
         })
         .catch((error) => {
@@ -72,6 +75,7 @@ class App extends React.Component {
       }
 
     render(){
+      debugger
         return (
             <div className="App">
                 <TimeEntryBar className="timeEntryBar" onSubmit={this.onAddBarSubmit}/>

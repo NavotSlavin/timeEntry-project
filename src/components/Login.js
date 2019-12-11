@@ -67,7 +67,7 @@ class Login extends React.Component {
             const userId = response.data._id;
             sessionStorage.setItem('token', response.data.token);
             //set token state for all componenets
-            localStorage.setItem('token', response.data.token);
+            sessionStorage.setItem('token', response.data.token);
             this.props.history.push(`/home/${userId}`);
           })
           .catch((error) => {
